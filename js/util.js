@@ -26,3 +26,28 @@ function hideElement(selector) {
     const el = document.querySelector(selector)
     el.classList.add('hide')
 }
+
+function putStringAmountTimesInMat(MAT, STRING, AMOUNT) {     
+    if (AMOUNT > MAT.length * MAT[0].length) return
+    for (var i = 0; i < AMOUNT; i++) {
+      var row = getRandomInt(0, MAT.length)
+      var col = getRandomInt(0, MAT[0].length)
+      if (MAT[row][col].isMine === STRING) {
+        i--
+      } else {
+        MAT[row][col].isMine = true
+      }
+    }
+  }
+
+  function openModal(msg) {
+    const elModal = document.querySelector('.modal')
+    const elSpan = elModal.querySelector('.msg')
+    elSpan.innerText = msg
+    elModal.style.display = 'block'
+}
+
+function closeModal() {
+    const elModal = document.querySelector('.modal')
+    elModal.style.display = 'none'
+}

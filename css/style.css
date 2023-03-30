@@ -9,8 +9,13 @@ h1 {
     color: rgb(0, 42, 255);
 }
 
+h2 {
+    text-align: center;
+    color: rgba(25, 25, 112, 0.683);
+}
 table {
     margin: auto;
+    margin-bottom: 150px;
     border: 30px solid rgba(37, 62, 21, 0.941);
     border-collapse: collapse;
     padding: 25%;
@@ -21,6 +26,20 @@ table {
     height: 40px;
     text-align: center;
     background-color: cyan;
+    color: black;
+}
+
+.cell-container {
+    position : relative;
+}
+
+.cell-hidden {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background-color: rgb(85, 104, 104);
 }
 
 /* .cell img {
@@ -64,4 +83,17 @@ span {
 .clicked {
     background-color: rgb(207, 103, 91);
     color: white;
+}
+
+.level-btn {
+    background-color: rgba(182, 135, 173, 0.751);
+    height: 70px;
+    width: 150px;
+    display:inline;
+    /* place-items:center; */
+    left: 50%;
+    right: 50%;
+   border: solid 7px;
+   border-radius: 4%;
+    margin-right: 30px;
 }
