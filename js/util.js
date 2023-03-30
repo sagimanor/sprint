@@ -40,14 +40,11 @@ function putStringAmountTimesInMat(MAT, STRING, AMOUNT) {
     }
   }
 
-  function openModal(msg) {
-    const elModal = document.querySelector('.modal')
-    const elSpan = elModal.querySelector('.msg')
-    elSpan.innerText = msg
-    elModal.style.display = 'block'
-}
-
-function closeModal() {
-    const elModal = document.querySelector('.modal')
-    elModal.style.display = 'none'
+  function startTimer() {
+    var startTime = Date.now()
+    const elTimer = document.querySelector('.timer')
+    gTimerIntervalId = setInterval(() => {
+        const diff = Date.now() - startTime
+        elTimer.innerText = (diff / 1000).toFixed(3)
+    }, 10)
 }

@@ -12,13 +12,24 @@ h1 {
 h2 {
     text-align: center;
     color: rgba(25, 25, 112, 0.683);
+    font-weight: 500;
+
 }
+
 table {
     margin: auto;
-    margin-bottom: 150px;
+    margin-bottom: 20px;
     border: 30px solid rgba(37, 62, 21, 0.941);
     border-collapse: collapse;
     padding: 25%;
+}
+
+.timer {
+    height: 50px;
+    background-color: lightcoral;
+    color: rgba(17, 17, 137, 0.831);
+    font-size: large;
+    border-radius: 10%;
 }
 
 .cell {
@@ -27,34 +38,21 @@ table {
     text-align: center;
     background-color: cyan;
     color: black;
+
 }
 
 .cell-container {
-    position : relative;
+    position: relative;
 }
 
 .cell-hidden {
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
-    height:100%;
+    height: 100%;
     background-color: rgb(85, 104, 104);
-}
-
-/* .cell img {
-    width: 25px;
-    height: auto; */
-/* } */
-
-.modal {
-    background-color: black;
-    border: 5px solid white;
-    width: 300px;
-    padding: 20px;
-    position: absolute;
-    top: 300px;
-    left: calc(50% - 175px);
+    cursor: pointer;
 }
 
 .hide {
@@ -67,17 +65,38 @@ table {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.score {
+/* .score {
     text-align: center;
-    color:black;
+    color: black;
     display: inline-block;
-    background-color:rgb(96, 96, 170);
+    background-color: rgb(96, 96, 170);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+/* .lives {
+    text-align: center;
+    color: rgb(71, 190, 53);
+    display: inline-block;
+    background-color: rgb(96, 96, 170);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+
+.smiley-btn {
+    /* text-align: center; */
+    margin:auto;
+    font-size:110px; 
+    height: 90px; 
+    width: 90px;
+    background-color: yellow;
+    /* border: solid black; */
+    border-radius: 50%;
 }
 
 span {
     text-align: center;
-    position: fixed;
+    position: relative ;
+    margin-left: 200px;
 }
 
 .clicked {
@@ -89,11 +108,42 @@ span {
     background-color: rgba(182, 135, 173, 0.751);
     height: 70px;
     width: 150px;
-    display:inline;
+    display: inline;
     /* place-items:center; */
     left: 50%;
     right: 50%;
-   border: solid 7px;
-   border-radius: 4%;
+    border: solid 7px;
+    border-radius: 4%;
     margin-right: 30px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.level-button-container {
+    margin-left: 170px;
+}
+
+.restart-btn {
+    height: 70px;
+    width: 150px;
+    margin-left: 350px;
+    background-color: greenyellow;
+    color: brown;
+    border-radius: 20%;
+    border: solid 5px rgb(88, 32, 178);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    cursor: pointer;
+}
+
+.cell-hidden:hover {
+    background: linear-gradient(to top, black, rgb(128, 128, 128));
+}
+
+.restart-btn:hover {
+    background: linear-gradient(to top, rgba(220, 124, 124, 0.648), rgb(128, 128, 128));
+}
+
+.level-btn:hover {
+    background: linear-gradient(to top, rgba(0, 255, 94, 0.651), rgb(128, 128, 128));
 }
