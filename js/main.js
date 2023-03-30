@@ -25,18 +25,18 @@ var gLivesCount = 3
 var gNeighborsMineCount
 
 function onInIt() {
-    startTimer()
+    
     var gGame = {
         isOn: true,
         shownCount: 0,
         markedCount: 0,
         secsPassed: 0
     }
-    if(gGame.isOn === false) return
+    if (gGame.isOn === false) return
 
     gBoard = buildBoard()
     renderBoard(gBoard, '.board')
-     putStringAmountTimesInMat(gBoard,'💣', gLevel.MINES)
+    putStringAmountTimesInMat(gBoard, '💣', gLevel.MINES)
     renderBoard(gBoard, '.board')
 
     setCellValue(gBoard)
@@ -49,15 +49,15 @@ function buildBoard() {
         board[i] = []
         for (var j = 0; j < gLevel.SIZE; j++) {
             board[i][j] = {
-                minesAroundCount: null,            
+                minesAroundCount: null,
                 isShown: false,
                 isMine: false,
                 isMarked: true
             }
         }
     }
-   // board[1][1].isMine = true
-   // board[0][0].isMine = true
+    // board[1][1].isMine = true
+    // board[0][0].isMine = true
     return board
 }
 
@@ -85,7 +85,7 @@ function renderBoard(board) {
                     <div  class="cell ${cellClass}">
                         ${currCell.isMine ? MINE : ''}
                         </div>
-                    <div class="cell-hidden  ${cellClass}"></div> ` 
+                    <div class="cell-hidden  ${cellClass}"></div> `
             strHTML += '</td>'
         }
         strHTML += '</tr>'
@@ -95,13 +95,14 @@ function renderBoard(board) {
 }
 
 function onCellClicked(elCell, i, j) {
+    startTimer()
     elCell.isShown = true
     var elHiddenCell = document.querySelector(`.cell-hidden.cell-${i}-${j}`)
     elHiddenCell.classList.add('hide')
     setMinesNegsCount(gBoard, i, j)
     if (gBoard[i][j].isMine)
-    // countLives(gLivesCount)                    NOT WORKING !!!!
-    checkGameOver() 
+        // countLives(gLivesCount)                    NOT WORKING !!!!
+        checkGameOver()
 }
 
 function onChangeLevel(level) {
@@ -111,11 +112,12 @@ function onChangeLevel(level) {
 }
 
 function checkGameOver() {
-    if( isVictory())  {
+    if (isVictory()) {
         showElement('.victory-container')
     } else {
         showElement('.defeat-container')
         console.log('Game Over')
+
     }
     clearInterval(gTimerIntervalId)
     // gGame.isOn = false                       NOT WORKING!!!!!
@@ -131,7 +133,7 @@ function onCellMarked(elCell) {
     if (cell.isShown || cell.isMarked) return
     console.log('Cell clicked: ', elCell, i, j)
     elCell.isMarked = true
-    // if(gBoard[i][j].isMine === true)               
+    // if(gBoard[i][j].isMine)               
 }
 
 function expandShown(board, elCell, i, j) {
@@ -150,12 +152,11 @@ function setCellValue(board) {
             if (gBoard[i][j].isMine) {
                 continue
             }
-            var minesAroundCount = setMinesNegsCount(board, i ,j)
+            var minesAroundCount = setMinesNegsCount(board, i, j)
             gBoard[i][j].minesAroundCount = minesAroundCount
             document.querySelector(`.cell.cell-${i}-${j}`).innerText = minesAroundCount
         }
     }
-
 }
 
 function isVictory() {
@@ -167,28 +168,9 @@ function countLives(lives) {
     elCountLives.innerText = lives
 }
 
-function smile() {
-    const elSmileBtn = document.querySelector('.smiley-btn')
+function renderBtn() {
+    const elSmileBtn = document.querySelector('.restart-btn')
     elSmileBtn.innerHTML = '&#9786;';
 }
 
-// Gets a string such as: 'cell-2-7' and returns {i:2, j:7}
-// function getCellCoord(strCellId) {
-//     const coord = {}
-//     const parts = strCellId.split('-')
-//     coord.i = +parts[1]
-//     coord.j = +parts[2]
-//     return coord
-//   }
 
- 
-
-// function getAmountOfCellsContaining(BOARD, ITEM) {            gBoard,MINE   count
-//     var amount = 0
-//     for (var i = 0; i < BOARD.length; i++) {
-//       for (var j = 0; j < BOARD[i].length; j++) {
-//         if (BOARD[i][j] === ITEM) amount++
-//       }
-//     }
-//     return amount
-//   }

@@ -1,6 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: lightblue;
     color: lightgreen;
+    
 }
 
 h1 {
@@ -13,23 +18,38 @@ h2 {
     text-align: center;
     color: rgba(25, 25, 112, 0.683);
     font-weight: 500;
-
 }
 
 table {
-    margin: auto;
+    margin-inline: 500px;
     margin-bottom: 20px;
+    margin-top: 25px;
     border: 30px solid rgba(37, 62, 21, 0.941);
     border-collapse: collapse;
     padding: 25%;
+    margin-right: 680px;
+    min-width: 300px;
+    max-width: 500px;
 }
 
 .timer {
-    height: 50px;
+    height: 40px;
+    padding: 15px;
     background-color: lightcoral;
-    color: rgba(17, 17, 137, 0.831);
+    color: rgba(10, 10, 43, 0.831);
     font-size: large;
     border-radius: 10%;
+    display: inline-flexbox;
+}
+
+.cell-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(85, 104, 104);
+    cursor: pointer;
 }
 
 .cell {
@@ -43,16 +63,6 @@ table {
 
 .cell-container {
     position: relative;
-}
-
-.cell-hidden {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(85, 104, 104);
-    cursor: pointer;
 }
 
 .hide {
@@ -81,22 +91,13 @@ table {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 } */
 
-
-.smiley-btn {
-    /* text-align: center; */
-    margin:auto;
-    font-size:110px; 
-    height: 90px; 
-    width: 90px;
-    background-color: yellow;
-    /* border: solid black; */
-    border-radius: 50%;
-}
-
 span {
+    height: 80px;
+    width: 100px;
+    border: solid 3px black;
+    display: inline;
     text-align: center;
-    position: relative ;
-    margin-left: 200px;
+    margin-inline-start: 600px;
 }
 
 .clicked {
@@ -120,13 +121,14 @@ span {
 }
 
 .level-button-container {
-    margin-left: 170px;
+    
+    margin-left: 450px;
 }
 
 .restart-btn {
     height: 70px;
     width: 150px;
-    margin-left: 350px;
+    margin-left: 550px;
     background-color: greenyellow;
     color: brown;
     border-radius: 20%;
