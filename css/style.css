@@ -3,9 +3,7 @@
 }
 
 body {
-    background-color: lightblue;
-    color: lightgreen;
-    
+    background-color: lightblue;  
 }
 
 h1 {
@@ -16,18 +14,17 @@ h1 {
 
 h2 {
     text-align: center;
-    color: rgba(25, 25, 112, 0.683);
+    color:indigo;
     font-weight: 500;
+    font-size: larger;
+    font-family:Arial, Helvetica, sans-serif
 }
 
 table {
-    margin-inline: 500px;
-    margin-bottom: 20px;
-    margin-top: 25px;
+    margin: 0 auto;
     border: 30px solid rgba(37, 62, 21, 0.941);
     border-collapse: collapse;
     padding: 25%;
-    margin-right: 680px;
     min-width: 300px;
     max-width: 500px;
 }
@@ -75,29 +72,12 @@ table {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* .score {
-    text-align: center;
-    color: black;
-    display: inline-block;
-    background-color: rgb(96, 96, 170);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-} */
-
-/* .lives {
-    text-align: center;
-    color: rgb(71, 190, 53);
-    display: inline-block;
-    background-color: rgb(96, 96, 170);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-} */
-
 span {
     height: 80px;
     width: 100px;
     border: solid 3px black;
-    display: inline;
     text-align: center;
-    margin-inline-start: 600px;
+    margin: 15px auto;
 }
 
 .clicked {
@@ -105,12 +85,21 @@ span {
     color: white;
 }
 
+.lives {
+    min-height: fit-content;
+    max-width: 200px;
+    background-color: bisque;
+    margin: 15px auto;
+    text-align: center;
+    font-size: x-large;
+    border: dotted rgb(29, 104, 104);
+}
+
 .level-btn {
     background-color: rgba(182, 135, 173, 0.751);
     height: 70px;
     width: 150px;
     display: inline;
-    /* place-items:center; */
     left: 50%;
     right: 50%;
     border: solid 7px;
@@ -118,17 +107,18 @@ span {
     margin-right: 30px;
     font-size: large;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .level-button-container {
     
-    margin-left: 450px;
+    margin: 15px auto;
+   
 }
 
 .restart-btn {
     height: 70px;
     width: 150px;
-    margin-left: 550px;
     background-color: greenyellow;
     color: brown;
     border-radius: 20%;
@@ -136,6 +126,7 @@ span {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
     cursor: pointer;
+    margin: 15px auto;
 }
 
 .cell-hidden:hover {

@@ -9,33 +9,41 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="onInIt()">
+<body onload="onInIt('easy')">
     <h1>💣 SWEEPER</h1>
     <div class="timer-container">
-        <span class="timer">0.0</span>
+        <span class="timer">0</span>
     </div>
-    <div class="lives">
-        
+    <div class="lives"> 
+
     </div>
-  
+
     </div>
     <table border="1">
         <tbody class="board"></tbody>
     </table>
     <div class="level-button-container">
-        <button class="level-btn" onclick="onChangeLevel(4)">Easy 🐣 </button>
-        <button class="level-btn" onclick="onChangeLevel(6)">Moderate 🐤 </button>
-        <button class="level-btn" onclick="onChangeLevel(8)">Hard 🐔 </button>
+        <button class="level-btn" onclick="onChangeLevel('easy')">Easy 🐣 </button>
+        <button class="level-btn" onclick="onChangeLevel('medium')">Medium 🐤 </button>
+        <button class="level-btn" onclick="onChangeLevel('hard')">Hard 🐔 </button>
+    </div>
+    <!-- <div class="smiley-container">
+    <button class="restart-btn smiley" onclick="onRestartGame()">😃</button>
+</div> -->
+
+    <div class="smiley-container">
+        <div class="victory-container hide">
+            <h1>You Won!</h1>
+        </div>
+        <div class="defeat-container hide">
+            <h1>You lost!</h1>
+        </div>
+        <div>
+            <button class="restart-btn" onclick="onRestartGame()">😃</button>
+        </div>
     </div>
 
-    <div class="victory-container hide">
-        <h1>You Won!</h1>
-        <button class="restart-btn" onclick="onRestartGame()">Play Again</button>
-    </div>
-    <div class="defeat-container hide">
-        <h1>You lost!</h1>
-        <button class="restart-btn" onclick="onRestartGame()">Play Again</button>
-    </div>
+
     <h2> Sagi </h2>>
     <script src="js/main.js"></script>
     <script src="js/util.js"></script>
