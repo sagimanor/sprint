@@ -31,29 +31,29 @@ function startTimer() {
 }
 
 function handleRightClick() {
-  window.oncontextmenu = function (e) {
-    e.preventDefault();
-    console.log(e.target.classList[1])
-     if (e.target.classList[1]) {
+  window.oncontextmenu = function (e) {                       //THE EVENT WHEN MOUSE IS RIGIHT CLICKED
+    e.preventDefault();                                       // PREVENT MENU OPENING
+    // console.log(e.target.classList[1])
+     if (e.target.classList[1]) {                             // CATCH THE TARGET ELEMENT LOCATION, classlist = [cell, cell-0-1]
       var elClass = e.target.classList[1]
-      const classes = elClass.split('-')
+      const classes = elClass.split('-')                       // cell-0-1 split('-') --> [cell,0,1]             
       var i  = classes[1]
       var j = classes[2]
   
-      var elCellFlag = document.querySelector('.flag'+'.' + elClass) 
+      var elCellFlag = document.querySelector('.flag'+'.' + elClass)  //CATCH FLAG CLASS OF TARGET CELL
      
-     if(gBoard[i][j].isMarked) {
+     if(gBoard[i][j].isMarked) {                                     // SUPPORT FOR 2ND CLICK REMOVE FLAG
       gBoard[i][j].isMarked = false
       elCellFlag.classList.add('hide')
       return
-     }
+     }                                                               //RENDER THE DOM ACCORDINGLEY
   
      gBoard[i][j].isMarked = true
      
      elCellFlag.classList.remove('hide')
      }
 
-     isVictory(gBoard)
+     isVictory(gBoard)                                          // SUPPORT WINNING BY FLAG MARK
      if (gGame.isVictory) {
       gGame.isOn = false;
             var elButton = document.querySelector('.restart-btn')

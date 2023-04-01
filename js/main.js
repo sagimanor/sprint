@@ -130,8 +130,10 @@ function onCellClicked(i, j) {
     gBoard[i][j].isShown = true
     var elHiddenCell = document.querySelector(`.cell-hidden.cell-${i}-${j}`)
     elHiddenCell.classList.add('hide')
-    if (!gBoard[i][j].isMine) {
-        expandShown(gBoard, i, j)
+    // if (!gBoard[i][j].isMine) {
+        if (gBoard[i][j].minesAroundCount === 0) {
+            expandShown(gBoard, i, j)
+        // }
     }
 
 
